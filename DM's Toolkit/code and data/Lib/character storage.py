@@ -87,6 +87,9 @@ i = 1
 j = 0
 while i > 0:
 
+    atklog = []
+    splperc = []
+
     input_varSTR1 = input('Input character you would like to alter.')
     j = 0
 
@@ -116,7 +119,7 @@ while i > 0:
 
                 for row in splperc:
 
-                    print(row)
+                    # print(row)
                     spldict[row[0]] = int(row[1])
 
             for key in atklog:
@@ -146,7 +149,7 @@ while i > 0:
 
             input_varSTR3 = input('what was the damage output')
 
-            print(f'atklog:{atklog}')
+            # print(f'atklog:{atklog}')
 
             atklog.append([temp_counter1 + 1, date, input_varSTR2, input_varSTR3])
 
@@ -156,6 +159,7 @@ while i > 0:
 
                 csvwriter = csv.writer(file)
                 csvwriter.writerow(tempheader)
+                csvwriter.writerows(atklog)
 
             tempheader = ['name', 'count']
 
@@ -163,6 +167,7 @@ while i > 0:
 
                 csvwriter = csv.writer(file)
                 csvwriter.writerow(tempheader)
+                csvwriter.writerows(splperc)
 
     if j == 0:
 
